@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="canonical" href="https://tomriddle7.github.io/ios-sci-web-calculator" />
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+</head>
+
+<body>
+  <a class="github-fork-ribbon left-top" href="https://tomriddle7.github.io/ios-sci-web-calculator" target="_blank"
+    data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub
+  </a>
+
+  <header class="screen">
+    <!-- <div class="previous"></div> -->
+    <div class="input">0</div>
+  </header>
+  <main class="tables">
+    <section id="sci">
+      <div class="row">
+        <div class="sub-col" button-type="operator-sci" onclick="operation('(')">(</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation(')')">)</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('mc')">mc</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('m+')">m+</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('m-')">m-</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('mr')">mr</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="operator-sci" id="2nd">
+          <p>
+            2<sup>nd</sup>
+          </p>
+        </div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('x2')">
+          <p>
+            x<sup>2</sup>
+          </p>
+        </div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('x3')">
+          <p>
+            x<sup>3</sup>
+          </p>
+        </div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('xy')">
+          <p>
+            x<sup>y</sup>
+          </p>
+        </div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('ex')">
+          <p>
+            e<sup>x</sup>
+          </p>
+        </div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('10x')">
+          <p>
+            10<sup>x</sup>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="operator-sci" onclick="operation('1x')">1/x</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('root2')">2√x</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('root3')">3√x</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('rooty')">y√x</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('ln')">ln</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('log')">log</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="operator-sci" onclick="operation('!')">!</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('sin')">sin</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('cos')">cos</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('sin')">tan</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('e')">e</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('ee')">EE</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="operator-sci" onclick="operation('rad')">Rad</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('sinh')">sinh</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('consh')">cosh</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('tanh')">tanh</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('pie')">π</div>
+        <div class="sub-col" button-type="operator-sci" onclick="operation('rand')">Rand</div>
+      </div>
+    </section>
+    <section id="normal">
+      <div class="row">
+        <div class="sub-col" button-type="func" id="clear">AC</div>
+        <div class="sub-col" button-type="func" data-value="+/-">+/-</div>
+        <div class="sub-col" button-type="func" data-value="%">%</div>
+        <div class="sub-col" button-type="operator" onclick="operation('/')">÷</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('7')">7</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('8')">8</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('9')">9</div>
+        <div class="sub-col" button-type="operator" onclick="operation('*')">x</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('4')">4</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('5')">5</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('6')">6</div>
+        <div class="sub-col" button-type="operator" onclick="operation('-')">-</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('1')">1</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('2')">2</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('3')">3</div>
+        <div class="sub-col" button-type="operator" onclick="operation('+')">+</div>
+      </div>
+      <div class="row">
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('0')" id="zero">0</div>
+        <div class="sub-col" button-type="digit" onclick="AssignNumber('.')">.</div>
+        <div class="sub-col" button-type="operator" onclick="operation('=')" id="equal">=</div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
