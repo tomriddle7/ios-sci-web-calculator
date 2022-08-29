@@ -1,2 +1,2 @@
 # ios-sci-web-calculator
-ios scientific  calculator with vanilla javascript
+This repository is iOS scientific calculator with vanilla javascript. This calculator can cross normal mode and scientific mode in rotate.
