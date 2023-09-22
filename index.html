@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@226;240;300;400&display=swap" rel="stylesheet">
     <link rel="manifest" href="./site.webmanifest">
-    <style type="text/css">
+<style type="text/css">
       body {
         -webkit-user-select: none;
         background-color: black;
@@ -139,7 +139,7 @@
         font-size: 0.8em;
       }
 
-      @media (min-width: 976px) {
+      @media (min-aspect-ratio: 3/2) {
         #displayContainer {
           max-width: 976px;
         }
@@ -153,7 +153,7 @@
         }
 
         .buttons-grid {
-          grid-template-columns: repeat(10, 1fr);
+          grid-template-columns: repeat(10, 1fr) !important;
           max-width: 976px;
           gap: 14px;
         }
@@ -163,56 +163,58 @@
         }
       }
 
-      @media (max-width: 975px) {
-        .buttons>div>span {
-          height: 85px;
+      @media (max-aspect-ratio: 3/2) {
+        @media (max-width: 975px) {
+          .buttons>div>span {
+            height: 85px;
+          }
+
+          .buttons-grid {
+            grid-template-columns: 85px 85px 85px 85px;
+            gap: 14px;
+          }
         }
 
-        .buttons-grid {
-          grid-template-columns: 85px 85px 85px 85px;
-          gap: 14px;
-        }
-      }
+        @media (max-width: 370px),
+        (max-height: 590px) {
+          .buttons>div>span {
+            height: 74px;
+          }
 
-      @media (max-width: 370px),
-      (max-height: 590px) {
-        .buttons>div>span {
-          height: 74px;
-        }
-
-        .buttons-grid {
-          grid-template-columns: 74px 74px 74px 74px;
-        }
-      }
-
-      @media (max-width: 347px),
-      (max-height: 550px) {
-        .buttons>div>span {
-          height: 68px;
+          .buttons-grid {
+            grid-template-columns: 74px 74px 74px 74px;
+          }
         }
 
-        .buttons-grid {
-          grid-template-columns: 68px 68px 68px 68px;
-          gap: 8px;
-        }
-      }
+        @media (max-width: 347px),
+        (max-height: 550px) {
+          .buttons>div>span {
+            height: 68px;
+          }
 
-      @media (max-width: 310px),
-      (max-height: 500px) {
-        .buttons>div>span {
-          height: 62px;
+          .buttons-grid {
+            grid-template-columns: 68px 68px 68px 68px;
+            gap: 8px;
+          }
         }
 
-        .buttons-grid {
-          grid-template-columns: 62px 62px 62px 62px;
-          gap: 8px;
-        }
-      }
+        @media (max-width: 310px),
+        (max-height: 500px) {
+          .buttons>div>span {
+            height: 62px;
+          }
 
-      @media (max-width: 285px),
-      (max-height: 465px) {
-        .buttons-grid {
-          gap: 4px;
+          .buttons-grid {
+            grid-template-columns: 62px 62px 62px 62px;
+            gap: 8px;
+          }
+        }
+
+        @media (max-width: 285px),
+        (max-height: 465px) {
+          .buttons-grid {
+            gap: 4px;
+          }
         }
       }
     </style>
